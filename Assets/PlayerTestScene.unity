@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 5
+  jumpForce: 5
 --- !u!95 &154618291
 Animator:
   serializedVersion: 7
