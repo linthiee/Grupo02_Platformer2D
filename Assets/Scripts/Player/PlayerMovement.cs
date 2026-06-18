@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
 
     private Rigidbody2D rb;
-    private Vector2 movement;
 
     private bool isGrounded = true;
 
@@ -21,17 +20,21 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         float move = Input.GetAxisRaw("Horizontal");
+        
+        animator.SetFloat("Speed", Mathf.Abs(move));
+
+        animator.SetBool("IsGround", isGrounded);
 
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
-        if (Input.GetKey(KeyCode.W) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
-        animator.SetFloat("Speed", Mathf.Abs(move));
+        animator.SetFloat("VerticalSpeed", rb.linearVelocity.y);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetTrigger("Attack");
         }
@@ -40,22 +43,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Choqué con: " + collision.gameObject.name);
+
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            Debug.Log("Player is grounded.");
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 }
