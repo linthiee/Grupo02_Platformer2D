@@ -1,28 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-public struct EasyLevelEvent {}
-public struct MediumLevelEvent {}
-public struct HardLevelEvent {}
-
-public struct ExitToMenuEvent {}
-
-public struct PerfectLandEvent
-{
-    public int points;
-}
-public struct BlockLandedEvent 
-{
-    public bool groundLand;
-    public bool blockLand;
-
-    public int points;
-}
-
-public struct UpdateCanvasEvent { }
-public struct EndGameEvent { }
-public struct TowerFallEvent { }
-
 public interface IEventBus
 {
     void Subscribe<T>(Action<T> onEvent);

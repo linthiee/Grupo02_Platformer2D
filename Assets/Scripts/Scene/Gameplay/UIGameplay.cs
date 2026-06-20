@@ -35,7 +35,6 @@ public class UIGameplay : MonoBehaviour
         panelSettings.SetActive(false);
         panelDefeat.SetActive(false);
 
-        //_eventBus.Subscribe<TowerFallEvent>(OnTowerFall);
     }
 
     private void Update()
@@ -52,19 +51,7 @@ public class UIGameplay : MonoBehaviour
         buttonSettingsExit.onClick.RemoveAllListeners();
         buttonDefeatExit.onClick.RemoveAllListeners();
         buttonRetry.onClick.RemoveAllListeners();
-
-        if (_eventBus != null)
-        {
-            //_eventBus.Unsubscribe<TowerFallEvent>(OnTowerFall);
-        }
     }
-    //private void OnTowerFall(TowerFallEvent eventData)
-    //{
-    //    Time.timeScale = 0;
-
-    //    Debug.Log("tower fall event");
-    //    panelDefeat.SetActive(true);
-    //}
 
     private void TogglePause()
     {

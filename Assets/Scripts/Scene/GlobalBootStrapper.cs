@@ -10,7 +10,6 @@ public static class GlobalBootstrapper
         IEventBus globalEventBus = new EventBus();
         ServiceLoader.AddService<IEventBus>(globalEventBus);
 
-        Object.Instantiate(Resources.Load<GameObject>("GlobalClickManager"));
         AudioSettingsSO audioSettings = Resources.Load<AudioSettingsSO>("AudioSettings");
 
         Debug.Log("initialized global services");

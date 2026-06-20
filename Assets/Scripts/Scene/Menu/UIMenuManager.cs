@@ -15,14 +15,9 @@ public class UIMenuManager : MonoBehaviour
 
     [SerializeField] private Button buttonExit;
 
-    [SerializeField] private Button buttonEasy;
-    [SerializeField] private Button buttonMedium;
-    [SerializeField] private Button buttonHard;
-
     [SerializeField] private GameObject panelMain;
     [SerializeField] private GameObject panelSettings;
     [SerializeField] private GameObject panelCredits;
-    [SerializeField] private GameObject panelDifficulty;
 
     private IEventBus _eventBus;
 
@@ -39,10 +34,6 @@ public class UIMenuManager : MonoBehaviour
         buttonCreditsExit.onClick.AddListener(OnPanelExitClicked);
 
         buttonExit.onClick.AddListener(OnExitClicked);
-
-        buttonEasy.onClick.AddListener(OnEasyClicked);
-        buttonMedium.onClick.AddListener(OnMediumClicked);
-        buttonHard.onClick.AddListener(OnHardClicked);
 
 #if UNITY_WEBGL
         if (buttonExit != null)
@@ -62,7 +53,6 @@ public class UIMenuManager : MonoBehaviour
     private void OnPlayClicked()
     {
         panelMain.SetActive(false);
-        panelDifficulty.SetActive(true);
     }
 
     private void OnSettingsClicked()
@@ -81,24 +71,6 @@ public class UIMenuManager : MonoBehaviour
     {
         Application.Quit();
     }
-
-    //private void OnEasyClicked()
-    //{
-    //    _eventBus.Publish(new EasyLevelEvent());
-    //    gameObject.SetActive(false);
-    //}
-
-    //private void OnMediumClicked()
-    //{
-    //    _eventBus.Publish(new MediumLevelEvent());
-    //    gameObject.SetActive(false);
-    //}
-
-    //private void OnHardClicked()
-    //{
-    //    _eventBus.Publish(new HardLevelEvent());
-    //    gameObject.SetActive(false);
-    //}
 
     private void OnDestroy()
     {
