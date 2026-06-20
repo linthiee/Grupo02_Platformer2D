@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class UIMenuManager : MonoBehaviour
 {
-    GameManager gameManager;
+    //GameManager gameManager;
 
     [SerializeField] private Button buttonPlay;
 
