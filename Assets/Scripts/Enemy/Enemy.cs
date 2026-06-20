@@ -1,10 +1,15 @@
+using System;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
     public float health = 100.0f;
-    public float speed = 10.0f;
-    
+    public float speed = 100.0f;
+
+    public Animator animator;
+
+    private int direction = -1;
+
     public void TakeDamage(int amount)
     {
         health -= amount;
@@ -23,13 +28,22 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Patrol()
     {
-        
+        transform.position = new Vector3(transform.position.x + (speed * Time.deltaTime * direction),
+            transform.position.y, transform.position.z);
+
+        animator.SetTrigger("walk");
     }
 
-    protected virtual bool OnPlayerDetected()
+    protected virtual void OnCollisionStay2D(Collision2D collision)
     {
-        return true;
+        Vector2 collisionNormal = collision.GetContact(0).normal;
+
+        if (Mathf.Abs(collisionNormal.x) > 0.5f && collision.gameObject.CompareTag("Ground"))
+        {
+                Debug.Log("vvvvvvvvvvvvvvvvvvvvvvv");
+                direction = -direction;
+        }
     }
-    
+
     protected abstract void Run();
 }
