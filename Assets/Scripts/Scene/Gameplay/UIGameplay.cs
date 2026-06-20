@@ -84,8 +84,8 @@ public class UIGameplay : MonoBehaviour
         {
             Time.timeScale = 1.0f;
 
-            _eventBus.Publish(new EndGameEvent());
-            _eventBus.Publish(new ExitToMenuEvent());
+            //_eventBus.Publish(new EndGameEvent());
+            //_eventBus.Publish(new ExitToMenuEvent());
         }
     }
     private void OnSettingsClicked()
