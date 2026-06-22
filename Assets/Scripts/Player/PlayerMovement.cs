@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded = true;
 
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
@@ -28,18 +29,18 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         float move = Input.GetAxisRaw("Horizontal");
 
-        animator.SetFloat("Speed", Mathf.Abs(move));
+        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
 
         animator.SetBool("IsGround", isGrounded);
 
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
-
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -51,7 +52,15 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("Attack");
         }
-
+        
+        if (move > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (move < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

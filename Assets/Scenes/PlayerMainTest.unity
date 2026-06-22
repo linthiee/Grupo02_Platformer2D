@@ -258,8 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d025a2181ee169499d70395534b326b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 5
-  jumpForce: 5
+  speed: 1.5
+  jumpForce: 3.5
 --- !u!212 &402783085
 SpriteRenderer:
   serializedVersion: 2
