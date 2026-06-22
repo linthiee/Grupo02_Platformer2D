@@ -11,6 +11,19 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
 
+    private void Start()
+    {
+        PlayerSpawnPoint playerSpawnpoint = FindObjectOfType<PlayerSpawnPoint>();
+      
+        if (playerSpawnpoint != null)
+        {
+            transform.position = playerSpawnpoint.transform.position;
+        }
+
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         float move = Input.GetAxisRaw("Horizontal");
-        
+
         animator.SetFloat("Speed", Mathf.Abs(move));
 
         animator.SetBool("IsGround", isGrounded);
