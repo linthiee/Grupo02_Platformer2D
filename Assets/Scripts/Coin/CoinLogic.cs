@@ -14,7 +14,7 @@ public class CoinLogic : MonoBehaviour
 
     private void Awake()
     {
-        _eventBus = ServiceLoader.GetService<EventBus>();
+        _eventBus = ServiceLoader.GetService<IEventBus>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

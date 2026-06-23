@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         Instance= this;
-        _eventBus = ServiceLoader.GetService<EventBus>();
+        _eventBus = ServiceLoader.GetService<IEventBus>();
         _eventBus.Subscribe<EventBus.CoinCollectedEvent>(OnCoinCollected);
     }
 
