@@ -7,6 +7,11 @@ public class CoinLogic : MonoBehaviour
 
     private IEventBus _eventBus;
 
+    private void Start()
+    {
+        gameObject.SetActive(true);
+    }
+
     private void Awake()
     {
         _eventBus = ServiceLoader.GetService<EventBus>();
