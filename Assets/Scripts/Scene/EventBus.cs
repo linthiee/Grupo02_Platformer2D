@@ -33,4 +33,13 @@ public class EventBus : IEventBus
         if (_subscribers.TryGetValue(type, out var action))
             (action as Action<T>)?.Invoke(eventData);
     }
+
+    public struct CoinCollectedEvent
+    {
+        public int CoinValue { get; }
+        public CoinCollectedEvent(int coinValue)
+        {
+            CoinValue = coinValue;
+        }
+    }
 }
