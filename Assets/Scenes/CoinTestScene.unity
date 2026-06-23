@@ -270,8 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d025a2181ee169499d70395534b326b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 1.5
-  jumpForce: 3.5
+  speed: 4.5
+  jumpForce: 9.3
 --- !u!212 &533955518
 SpriteRenderer:
   serializedVersion: 2
@@ -346,7 +346,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
