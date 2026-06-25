@@ -40,7 +40,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111804274995860122}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -297,6 +297,8 @@ MonoBehaviour:
   health: 100
   speed: 10
   animator: {fileID: 8263069649601025976}
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
 --- !u!1 &7475448852135748227
 GameObject:
   m_ObjectHideFlags: 0
