@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Transform attackPoint;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 5f;
+
+    private bool facingRight = true;
 
     private Rigidbody2D rb;
 
@@ -56,10 +59,16 @@ public class PlayerMovement : MonoBehaviour
         if (move > 0)
         {
             spriteRenderer.flipX = false;
+            facingRight = true;
+
+            attackPoint.localPosition = new Vector3(0.8f, 0.0f, 0.0f);
         }
         else if (move < 0)
         {
             spriteRenderer.flipX = true;
+            facingRight = false;
+
+            attackPoint.localPosition = new Vector3(-0.8f, 0.0f, 0.0f);
         }
     }
 
