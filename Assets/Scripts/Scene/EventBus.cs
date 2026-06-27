@@ -42,4 +42,30 @@ public class EventBus : IEventBus
             CoinValue = coinValue;
         }
     }
+
+    public struct PlayerAttackEvent
+    {
+    }
+
+    public struct PlayerDeathEvent
+    {
+        public int DamageAmount { get; }
+        public PlayerDeathEvent(int damageAmount)
+        {
+            DamageAmount = damageAmount;
+        }
+    }
+
+    public struct PlayerRespawnEvent
+    {
+    }
+
+    public struct EnemyDeathEvent
+    {
+        public Enemy enemy;
+        public EnemyDeathEvent(Enemy enemy)
+        {
+            this.enemy = enemy;
+        }
+    }
 }
