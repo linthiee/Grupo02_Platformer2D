@@ -10,6 +10,10 @@ public abstract class Enemy : MonoBehaviour
 
     private int direction = -1;
 
+    public Transform wallCheck;
+    public float wallCheckDistance = 0.5f;
+    public LayerMask groundLayer; 
+    
     public void TakeDamage(int amount)
     {
         health -= amount;
@@ -26,12 +30,25 @@ public abstract class Enemy : MonoBehaviour
 
     protected abstract void Attack();
 
+    protected bool IsHittingWall()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, groundLayer);
+
+        Debug.DrawRay(wallCheck.position, transform.right * wallCheckDistance, Color.red);
+
+        return (hit.collider != null);
+    }
+    
     protected virtual void Patrol()
     {
         transform.position = new Vector3(transform.position.x + (speed * Time.deltaTime * direction),
             transform.position.y, transform.position.z);
 
-        Debug.Log("patroling");
+        if (IsHittingWall())
+        {
+            direction = -direction;
+            Flip();
+        }
     }
 
     protected virtual void Patrol(Transform pointA, Transform pointB, ref Transform currentTarget)
@@ -64,20 +81,6 @@ public abstract class Enemy : MonoBehaviour
         animator.SetTrigger("walk");
 
         Debug.Log($"current target: {currentTarget.position.x}, position: {transform.position.x}, distance: {Mathf.Abs(currentTarget.position.x - transform.position.x)}");
-    }
-
-    protected virtual void OnCollisionStay2D(Collision2D collision)
-    {
-        Debug.Log("collision");
-
-        Vector2 collisionNormal = collision.GetContact(0).normal;
-
-        if (Mathf.Abs(collisionNormal.x) > 0.5f && collision.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("vvvvvvvvvvvvvvvvvvvvvvv");
-            direction = -direction;
-            Flip();
-        }
     }
 
     protected abstract void Run();

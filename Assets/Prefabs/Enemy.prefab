@@ -126,6 +126,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4119215022417561172}
+  - {fileID: 1507397766070124994}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8328121090218678726
@@ -281,7 +282,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4125163874089611030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,8 +298,44 @@ MonoBehaviour:
   health: 100
   speed: 10
   animator: {fileID: 8263069649601025976}
+  wallCheck: {fileID: 1507397766070124994}
+  wallCheckDistance: 0.5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
   pointA: {fileID: 0}
   pointB: {fileID: 0}
+--- !u!1 &5933417926931752744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507397766070124994}
+  m_Layer: 0
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1507397766070124994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5933417926931752744}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.92, y: -0.63, z: 0}
+  m_LocalScale: {x: 0.62460965, y: 0.62460965, z: 0.62460965}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 315174266896771295}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7475448852135748227
 GameObject:
   m_ObjectHideFlags: 0
