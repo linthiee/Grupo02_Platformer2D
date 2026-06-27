@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public float health = 100.0f;
-    public float speed = 100.0f;
+    public float speed = 10.0f;
 
     public Animator animator;
 
@@ -12,8 +12,12 @@ public abstract class Enemy : MonoBehaviour
 
     public Transform wallCheck;
     public float wallCheckDistance = 0.5f;
-    public LayerMask groundLayer; 
-    
+    public LayerMask groundLayer;
+
+    public SpriteRenderer visualFov;
+    private Color normalColor = new Color(1f, 1f, 1f, 0.5f);
+    private Color alertColor = new Color(1f, 0f, 0f, 0.5f);
+
     public void TakeDamage(int amount)
     {
         health -= amount;
@@ -28,6 +32,24 @@ public abstract class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("enemy te ve");
+            visualFov.color = alertColor;
+            Attack();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            visualFov.color = normalColor;
+            ReturnToNormalSpeed();
+        }
+    }
     protected abstract void Attack();
 
     protected bool IsHittingWall()
@@ -38,7 +60,7 @@ public abstract class Enemy : MonoBehaviour
 
         return (hit.collider != null);
     }
-    
+
     protected virtual void Patrol()
     {
         transform.position = new Vector3(transform.position.x + (speed * Time.deltaTime * direction),
@@ -76,14 +98,17 @@ public abstract class Enemy : MonoBehaviour
             {
                 currentTarget = pointA;
             }
+
             Debug.Log("changing target");
         }
+
         animator.SetTrigger("walk");
 
-        Debug.Log($"current target: {currentTarget.position.x}, position: {transform.position.x}, distance: {Mathf.Abs(currentTarget.position.x - transform.position.x)}");
+        Debug.Log(
+            $"current target: {currentTarget.position.x}, position: {transform.position.x}, distance: {Mathf.Abs(currentTarget.position.x - transform.position.x)}");
     }
-
-    protected abstract void Run();
+    
+    protected abstract void ReturnToNormalSpeed();
 
     private void Flip()
     {

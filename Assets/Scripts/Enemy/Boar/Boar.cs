@@ -14,14 +14,17 @@ public class Boar : Enemy
 
     private void FixedUpdate()
     {
-        Patrol();
+        Patrol(pointA, pointB, ref currentTarget);
     }
+
     protected override void Attack()
     {
+        speed += 5.0f;
+        Debug.Log("Speed: " + speed);
     }
 
-    protected override void Run()
+    protected override void ReturnToNormalSpeed()
     {
-
+        speed = 5.0f;
     }
 }
