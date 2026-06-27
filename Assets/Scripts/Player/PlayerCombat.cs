@@ -26,8 +26,10 @@ public class PlayerCombat : MonoBehaviour
     {
         // Play attack animation
         animator.SetTrigger("Attack");
+    }
 
-        // Detect enemies in range of attack
+    public void DealDamge()
+    {
         Collider2D[] hitEnemie = Physics2D.OverlapBoxAll(attackPoint.position, attackSize, 0f, enemyLayers);
 
         // Damage them
@@ -40,8 +42,9 @@ public class PlayerCombat : MonoBehaviour
                 enemy.TakeDamage(attackDamage);
             }
         }
-    }
 
+    }
+   
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
