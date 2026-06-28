@@ -39,7 +39,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1236933013688165567}
-    m_Position: {x: 100, y: 350, z: 0}
+    m_Position: {x: 150, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3173501041784057603}
     m_Position: {x: -330, y: 400, z: 0}
@@ -394,7 +394,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PlayerIdle
-  m_Speed: 0.4
+  m_Speed: 0.1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -764756447761047277}

@@ -6385,8 +6385,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   attackPoint: {fileID: 9068371}
-  speed: 5
+  maxSpeed: 8
+  acceleration: 10
+  deceleration: 10
   jumpForce: 14
+  coyoteTime: 0.15
+  jumpBufferTime: 0.15
 --- !u!1 &529644490
 GameObject:
   m_ObjectHideFlags: 0
@@ -6902,7 +6906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9127383465203323114, guid: b6c66c8c6c8fc6045ba3837a17bc0ec2, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

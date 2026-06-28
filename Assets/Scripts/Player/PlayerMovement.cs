@@ -1,24 +1,43 @@
 using UnityEngine;
 
+public enum PlayerState
+{
+    Idle,
+    Moving,
+    Jumping,
+    Falling,
+    Attacking
+}
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform attackPoint;
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float jumpForce = 5f;
+    
+    [SerializeField] private float maxSpeed = 8f;
+    [SerializeField] private float acceleration = 10f;
+    [SerializeField] private float deceleration = 10f;
+    [SerializeField] private float jumpForce = 12f;
 
+    [SerializeField] private float coyoteTime = 0.15f;
+    [SerializeField] private float jumpBufferTime = 0.15f;
+
+    private PlayerState currentState = PlayerState.Idle;
     private bool facingRight = true;
-
-    private Rigidbody2D rb;
-
     private bool isGrounded = true;
 
+    private float coyoteTimeCounter;
+    private float jumpBufferCounter;
+
+    private float moveInput;
+    private bool jumpRequest;
+
+    private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         PlayerSpawnPoint playerSpawnpoint = FindObjectOfType<PlayerSpawnPoint>();
-      
         if (playerSpawnpoint != null)
         {
             transform.position = playerSpawnpoint.transform.position;
@@ -26,66 +45,149 @@ public class PlayerMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-    }
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        float move = Input.GetAxisRaw("Horizontal");
+        GatherInputs();
+        UpdateTimers();
+        UpdateState();
+        UpdateAnimations();
+        HandleSpriteFlip();
+    }
 
+    private void FixedUpdate()
+    {
+        ApplyMovement();
+        ApplyJump();
+    }
+
+    private void GatherInputs()
+    {
+        moveInput = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && currentState != PlayerState.Attacking)
+        {
+            Attack();
+        }
+    }
+
+    private void UpdateTimers()
+    {
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        jumpBufferCounter -= Time.deltaTime;
+
+        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f)
+        {
+            jumpRequest = true;
+            jumpBufferCounter = 0f;
+            coyoteTimeCounter = 0f; 
+        }
+    }
+
+    private void UpdateState()
+    {
+        if (currentState == PlayerState.Attacking) 
+            return;
+
+        if (isGrounded)
+        {
+            currentState = (Mathf.Abs(rb.linearVelocity.x) > 0.1f) ? PlayerState.Moving : PlayerState.Idle;
+        }
+        else
+        {
+            currentState = (rb.linearVelocity.y > 0) ? PlayerState.Jumping : PlayerState.Falling;
+        }
+    }
+
+    private void UpdateAnimations()
+    {
         animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
-
-        animator.SetBool("IsGround", isGrounded);
-
-        rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        }
-
         animator.SetFloat("VerticalSpeed", rb.linearVelocity.y);
+        animator.SetBool("IsGround", isGrounded);
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+    private void HandleSpriteFlip()
+    {
+        if (moveInput > 0 && !facingRight)
         {
-            animator.SetTrigger("Attack");
+            Flip(true);
         }
+        else if (moveInput < 0 && facingRight)
+        {
+            Flip(false);
+        }
+    }
+
+    private void Flip(bool right)
+    {
+        facingRight = right;
+        spriteRenderer.flipX = !right;
         
-        if (move > 0)
-        {
-            spriteRenderer.flipX = false;
-            facingRight = true;
+        float attackPointX = right ? 0.8f : -0.8f;
+        attackPoint.localPosition = new Vector3(attackPointX, 0.0f, 0.0f);
+    }
 
-            attackPoint.localPosition = new Vector3(0.8f, 0.0f, 0.0f);
-        }
-        else if (move < 0)
-        {
-            spriteRenderer.flipX = true;
-            facingRight = false;
+    private void Attack()
+    {
+        currentState = PlayerState.Attacking;
+        animator.SetTrigger("Attack");
 
-            attackPoint.localPosition = new Vector3(-0.8f, 0.0f, 0.0f);
+        // EventBus.Publish(new PlayerAttackEvent());
+    }
+
+    public void OnAttackComplete() 
+    {
+        currentState = PlayerState.Idle;
+    }
+
+    private void ApplyMovement()
+    {
+        float targetSpeed = moveInput * maxSpeed;
+        
+        float speedDif = targetSpeed - rb.linearVelocity.x;
+        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deceleration;
+        
+        float movementForce = speedDif * accelRate;
+        rb.AddForce(movementForce * Vector2.right, ForceMode2D.Force);
+    }
+
+    private void ApplyJump()
+    {
+        if (jumpRequest)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+            
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            
+            jumpRequest = false;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Choqué con: " + collision.gameObject.name);
-
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            Debug.Log("Player is grounded.");
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;

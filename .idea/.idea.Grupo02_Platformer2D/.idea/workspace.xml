@@ -10,7 +10,46 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="352ea669-9f2d-41d3-8340-31a19301b1e7" name="Changes" comment="" />
+    <list default="true" id="352ea669-9f2d-41d3-8340-31a19301b1e7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grupo02_Platformer2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grupo02_Platformer2D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-00.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-00.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-06.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-00.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-00.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-00.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/Fall/adventurer-fall-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/Fall/adventurer-fall-00.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/Fall/adventurer-fall-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/Fall/adventurer-fall-01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-00.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-00.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Player/adventurer-hand-combat-Sheet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Player/adventurer-hand-combat-Sheet.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +59,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1b6535aa091d41cf8b3ca222ed9ceef0212600/8d/8b9b89f8/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Boar/Boar.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
@@ -28,67 +69,67 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.025916235806701292" />
-      <entry key="MS500" value="0.4816309470100739" />
-      <entry key="S2" value="0.8330644389888432" />
-      <entry key="S5" value="0.929547181678289" />
-      <entry key="S10" value="0.9641302721511699" />
-      <entry key="S30" value="0.9878975455258571" />
-      <entry key="S60" value="0.9939303526350338" />
-      <entry key="M2" value="0.9970284545622369" />
-      <entry key="M5" value="1.2725356022091352" />
-      <entry key="M10" value="5.67697709873187" />
-      <entry key="M15" value="13.119092671501217" />
-      <entry key="M30" value="32.48488282882486" />
-      <entry key="H1" value="51.79564219664989" />
-      <entry key="H2" value="65.53387166774611" />
-      <entry key="H4" value="73.74325565866641" />
-      <entry key="D1" value="81.37899139759564" />
-      <entry key="W1" value="82.76643594257152" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000000000000013" />
+      <entry key="S2" value="1.0009073434934879" />
+      <entry key="S5" value="1.2500169866134232" />
+      <entry key="S10" value="2.652111722886872" />
+      <entry key="S30" value="6.842264776882264" />
+      <entry key="S60" value="9.015714720587075" />
+      <entry key="M2" value="10.389799501826133" />
+      <entry key="M5" value="11.32512852417949" />
+      <entry key="M10" value="11.657212626518728" />
+      <entry key="M15" value="11.770269067790256" />
+      <entry key="M30" value="11.887332978128006" />
+      <entry key="H1" value="12.567282664072811" />
+      <entry key="H2" value="22.219045099302644" />
+      <entry key="H4" value="54.79846483402332" />
+      <entry key="D1" value="155.41479738642357" />
+      <entry key="W1" value="188.73051335329083" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0000000001396634" />
-      <entry key="M2" value="1.0000267581993223" />
-      <entry key="M5" value="1.0589768289943557" />
-      <entry key="M10" value="1.8266422606318575" />
-      <entry key="M15" value="3.008877092170667" />
-      <entry key="M30" value="5.900629703723243" />
-      <entry key="H1" value="8.66504582613788" />
-      <entry key="H2" value="10.589540706901168" />
-      <entry key="H4" value="11.72696863259379" />
-      <entry key="D1" value="12.777744749730637" />
-      <entry key="W1" value="12.967993123741882" />
+      <entry key="MS100" value="1.1684590034001487E-75" />
+      <entry key="MS500" value="1.0316269899896794E-15" />
+      <entry key="S2" value="1.7921760693775652E-4" />
+      <entry key="S5" value="0.03172139439477056" />
+      <entry key="S10" value="0.17810500946006702" />
+      <entry key="S30" value="0.5626332294367736" />
+      <entry key="S60" value="0.7500888143658546" />
+      <entry key="M2" value="0.8660766792645179" />
+      <entry key="M5" value="0.944109869844822" />
+      <entry key="M10" value="0.9716531633488479" />
+      <entry key="M15" value="0.9810116957868134" />
+      <entry key="M30" value="0.9908810245470636" />
+      <entry key="H1" value="1.0858355265600483" />
+      <entry key="H2" value="2.4658893290360204" />
+      <entry key="H4" value="7.105140944524946" />
+      <entry key="D1" value="21.388463873889535" />
+      <entry key="W1" value="26.11144622383785" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.03338279531292689" />
-      <entry key="MS500" value="0.6709873976420139" />
-      <entry key="S2" value="1.4805828899326907" />
-      <entry key="S5" value="1.7691699902725655" />
-      <entry key="S10" value="1.8803072098131661" />
-      <entry key="S30" value="1.9591074079536384" />
-      <entry key="S60" value="1.9794264442165381" />
-      <entry key="M2" value="1.9897753952914552" />
-      <entry key="M5" value="2.3280834329706908" />
-      <entry key="M10" value="7.498105136817747" />
-      <entry key="M15" value="16.12013302741408" />
-      <entry key="M30" value="38.37627125976236" />
-      <entry key="H1" value="60.45344166990454" />
-      <entry key="H2" value="76.11886006475332" />
-      <entry key="H4" value="85.46767124764794" />
-      <entry key="D1" value="94.15626778433526" />
-      <entry key="W1" value="95.73436104579376" />
+      <entry key="MS100" value="0.0016085762056007283" />
+      <entry key="MS500" value="0.27624112119998" />
+      <entry key="S2" value="0.7260183466063768" />
+      <entry key="S5" value="1.1559267472080583" />
+      <entry key="S10" value="2.750317493976037" />
+      <entry key="S30" value="7.36226319631885" />
+      <entry key="S60" value="9.74032241628816" />
+      <entry key="M2" value="11.241814930159137" />
+      <entry key="M5" value="12.26325352774437" />
+      <entry key="M10" value="12.625809310924177" />
+      <entry key="M15" value="12.749228569167483" />
+      <entry key="M30" value="12.877179747717935" />
+      <entry key="H1" value="13.652510821040906" />
+      <entry key="H2" value="24.683952025118746" />
+      <entry key="H4" value="61.90197210985782" />
+      <entry key="D1" value="176.80240291887017" />
+      <entry key="W1" value="214.84180928145418" />
     </decayedShown>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3FNKAf4VpCBXH5V4hXKvCJEen5c" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -105,7 +146,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "devMain",
+    "git-widget-placeholder": "PlayerCleanup",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -160,6 +201,7 @@
       <option name="presentableId" value="Default" />
       <updated>1781909946151</updated>
       <workItem from="1781909949268" duration="3302000" />
+      <workItem from="1782592225716" duration="11605000" />
     </task>
     <servers />
   </component>
