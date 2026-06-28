@@ -13,13 +13,13 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform attackPoint;
     
-    [SerializeField] private float maxSpeed = 8f;
-    [SerializeField] private float acceleration = 10f;
-    [SerializeField] private float deceleration = 10f;
-    [SerializeField] private float jumpForce = 12f;
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private float acceleration;
+    [SerializeField] private float deceleration;
+    [SerializeField] private float jumpForce;
 
-    [SerializeField] private float coyoteTime = 0.15f;
-    [SerializeField] private float jumpBufferTime = 0.15f;
+    [SerializeField] private float coyoteTime;
+    [SerializeField] private float jumpBufferTime;
 
     private PlayerState currentState = PlayerState.Idle;
     private bool facingRight = true;
@@ -105,7 +105,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateState()
     {
-        if (currentState == PlayerState.Attacking) return;
+        if (currentState == PlayerState.Attacking) 
+            return;
 
         if (isGrounded)
         {
