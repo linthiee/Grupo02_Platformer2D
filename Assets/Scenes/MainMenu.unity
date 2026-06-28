@@ -1358,7 +1358,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 716790531}
-  - component: {fileID: 716790532}
   m_Layer: 0
   m_Name: UISettings
   m_TagString: Untagged
@@ -1381,18 +1380,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 359689799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &716790532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716790530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5216d663c6d2f2841b04562dfc75b7d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UISettings
 --- !u!1 &725420024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,7 +2993,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1307762524}
   - component: {fileID: 1307762523}
-  - component: {fileID: 1307762525}
   m_Layer: 0
   m_Name: UIMenuManager
   m_TagString: Untagged
@@ -3015,33 +3001,6 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1307762523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307762522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b6949e7499d194ebb227e94694ed52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIMenuManager
---- !u!4 &1307762524
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307762522}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26293, y: -0, z: 22.77459}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1307762525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3062,6 +3021,21 @@ MonoBehaviour:
   panelMain: {fileID: 2011377773}
   panelSettings: {fileID: 1313465503}
   panelCredits: {fileID: 61209027}
+--- !u!4 &1307762524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307762522}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.26293, y: -0, z: 22.77459}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1313465503 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 446953493330819885, guid: b9eff109a6f2e5a468294c3a0fd84636, type: 3}
