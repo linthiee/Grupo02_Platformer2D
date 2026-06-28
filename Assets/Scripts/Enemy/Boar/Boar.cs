@@ -14,7 +14,7 @@ public class Boar : Enemy
 
     private void FixedUpdate()
     {
-        Patrol(pointA, pointB, ref currentTarget);
+        Patrol();
     }
 
     protected override void Attack()
@@ -25,6 +25,6 @@ public class Boar : Enemy
 
     protected override void ReturnToNormalSpeed()
     {
-        speed = 5.0f;
+        speed = normalSpeed;
     }
 }
