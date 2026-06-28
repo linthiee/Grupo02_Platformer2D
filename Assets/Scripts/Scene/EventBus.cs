@@ -62,10 +62,26 @@ public class EventBus : IEventBus
 
     public struct EnemyDeathEvent
     {
-        public Enemy enemy;
+        public Enemy Enemy { get; }
         public EnemyDeathEvent(Enemy enemy)
         {
-            this.enemy = enemy;
+            Enemy = enemy;
         }
+    }
+
+    public struct EasyLevelEvent
+    {
+    }
+
+    public struct ExitToMenuEvent
+    {
+    }
+
+    public struct EndGameEvent
+    {
+    }
+
+    public struct ExitFromMenuEvent
+    {
     }
 }

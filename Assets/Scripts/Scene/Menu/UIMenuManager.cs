@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIMenuManager : MonoBehaviour
@@ -53,6 +54,7 @@ public class UIMenuManager : MonoBehaviour
     private void OnPlayClicked()
     {
         panelMain.SetActive(false);
+        SceneManager.LoadScene("Lvl1Map");
     }
 
     private void OnSettingsClicked()

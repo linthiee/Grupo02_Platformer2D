@@ -38,7 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        PlayerSpawnPoint playerSpawnpoint = FindObjectOfType<PlayerSpawnPoint>();
+        PlayerSpawnPoint playerSpawnpoint = FindFirstObjectByType<PlayerSpawnPoint>();
+      
         if (playerSpawnpoint != null)
         {
             transform.position = playerSpawnpoint.transform.position;
