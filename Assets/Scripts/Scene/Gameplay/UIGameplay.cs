@@ -16,6 +16,7 @@ public class UIGameplay : MonoBehaviour
 
     [SerializeField] private Button buttonDefeatExit;
     [SerializeField] private Button buttonRetry;
+    [SerializeField] private Button buttonRetryPause;
 
     private IEventBus _eventBus;
 
@@ -31,11 +32,11 @@ public class UIGameplay : MonoBehaviour
 
         buttonDefeatExit.onClick.AddListener(OnExitClicked);
         buttonRetry.onClick.AddListener(OnRetryClicked);
+        buttonRetryPause.onClick.AddListener(OnRetryClicked);
 
         panelPause.SetActive(false);
         panelSettings.SetActive(false);
         panelDefeat.SetActive(false);
-
     }
 
     private void Update()
@@ -52,6 +53,7 @@ public class UIGameplay : MonoBehaviour
         buttonSettingsExit.onClick.RemoveAllListeners();
         buttonDefeatExit.onClick.RemoveAllListeners();
         buttonRetry.onClick.RemoveAllListeners();
+        buttonRetryPause.onClick.RemoveAllListeners();
     }
 
     private void TogglePause()
