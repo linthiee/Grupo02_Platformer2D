@@ -12,42 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="352ea669-9f2d-41d3-8340-31a19301b1e7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grupo02_Platformer2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grupo02_Platformer2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-00.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Attack/adventurer-attack1-04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-00.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Die/adventurer-die-06.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-00.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Hurt/adventurer-hurt-02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-00.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-00.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-2-03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/Fall/adventurer-fall-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/Fall/adventurer-fall-00.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/Fall/adventurer-fall-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/Fall/adventurer-fall-01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-00.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Jump/adventurer-jump-03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-00.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-00.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-01.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-03.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-04.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Run/adventurer-run-05.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/Player/adventurer-hand-combat-Sheet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Sprites/Player/adventurer-hand-combat-Sheet.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-00_0.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-00_0.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1781909946151</updated>
       <workItem from="1781909949268" duration="3302000" />
-      <workItem from="1782592225716" duration="11605000" />
+      <workItem from="1782592225716" duration="12844000" />
     </task>
     <servers />
   </component>

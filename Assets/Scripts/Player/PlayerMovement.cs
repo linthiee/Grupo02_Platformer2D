@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerState currentState = PlayerState.Idle;
     private bool facingRight = true;
-    private bool isGrounded = true;
+    private bool isGrounded = false;
+    private bool wasGrounded = false; 
 
     private float coyoteTimeCounter;
     private float jumpBufferCounter;
@@ -59,6 +60,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        wasGrounded = isGrounded;
+        isGrounded = false; 
+
         ApplyMovement();
         ApplyJump();
     }
@@ -95,14 +99,13 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpRequest = true;
             jumpBufferCounter = 0f;
-            coyoteTimeCounter = 0f; 
+            coyoteTimeCounter = 0f;
         }
     }
 
     private void UpdateState()
     {
-        if (currentState == PlayerState.Attacking) 
-            return;
+        if (currentState == PlayerState.Attacking) return;
 
         if (isGrounded)
         {
@@ -116,9 +119,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+        float currentSpeed = Mathf.Abs(rb.linearVelocity.x);
+        animator.SetFloat("Speed", currentSpeed);
         animator.SetFloat("VerticalSpeed", rb.linearVelocity.y);
         animator.SetBool("IsGround", isGrounded);
+
+        float animationSpeedRatio = Mathf.Max(0.1f, currentSpeed / maxSpeed);
+        animator.SetFloat("RunMultiplier", animationSpeedRatio);
     }
 
     private void HandleSpriteFlip()
@@ -146,8 +153,6 @@ public class PlayerMovement : MonoBehaviour
     {
         currentState = PlayerState.Attacking;
         animator.SetTrigger("Attack");
-
-        // EventBus.Publish(new PlayerAttackEvent());
     }
 
     public void OnAttackComplete() 
@@ -158,7 +163,6 @@ public class PlayerMovement : MonoBehaviour
     private void ApplyMovement()
     {
         float targetSpeed = moveInput * maxSpeed;
-        
         float speedDif = targetSpeed - rb.linearVelocity.x;
         float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deceleration;
         
@@ -171,26 +175,31 @@ public class PlayerMovement : MonoBehaviour
         if (jumpRequest)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-            
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            
             jumpRequest = false;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
-        }
-    }
+            for (int i = 0; i < collision.contactCount; i++)
+            {
+                Vector2 normal = collision.GetContact(i).normal;
+                
+                if (normal.y > 0.5f)
+                {
+                    isGrounded = true;
+                    
+                    if (!wasGrounded)
+                    {
+                        wasGrounded = true; 
+                    }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
+                    return;
+                }
+            }
         }
     }
 }
