@@ -2463,7 +2463,7 @@ Transform:
   m_GameObject: {fileID: 631807108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 353.25, y: 5, z: 0}
+  m_LocalPosition: {x: 69.34, y: 17.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6565,7 +6565,7 @@ Transform:
   m_GameObject: {fileID: 1856783857}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 396, y: 4.6, z: 0}
+  m_LocalPosition: {x: 91.17, y: 17.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7638,11 +7638,11 @@ PrefabInstance:
     - target: {fileID: 4125163874089611030, guid: b6c66c8c6c8fc6045ba3837a17bc0ec2, type: 3}
       propertyPath: pointA
       value: 
-      objectReference: {fileID: 631807109}
+      objectReference: {fileID: 1522459613}
     - target: {fileID: 4125163874089611030, guid: b6c66c8c6c8fc6045ba3837a17bc0ec2, type: 3}
       propertyPath: pointB
       value: 
-      objectReference: {fileID: 1856783858}
+      objectReference: {fileID: 1197428510}
     - target: {fileID: 5736632176013803203, guid: b6c66c8c6c8fc6045ba3837a17bc0ec2, type: 3}
       propertyPath: m_Name
       value: Enemy (5)
