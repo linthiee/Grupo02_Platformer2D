@@ -58,6 +58,9 @@ public class UIGameplay : MonoBehaviour
 
     private void TogglePause()
     {
+        if (panelDefeat.gameObject.activeInHierarchy)
+            return;
+        
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0.0f : 1.0f;
         panelPause.SetActive(isPaused);

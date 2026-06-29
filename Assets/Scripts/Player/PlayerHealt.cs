@@ -3,10 +3,17 @@ using UnityEngine;
 
 public class PlayerHealt : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 2;
-    [SerializeField] private Transform PlayerSpawnPoint;
-
+    public int maxHealth = 3;
     private int currentHealth;
+
+    public float iFramesDuration = 1.5f;
+    private bool isInvulnerable = false;
+
+    public SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    private Color flashColor = new Color(1f, 1f, 1f, 0.7f);
+    
+    [SerializeField] private Transform PlayerSpawnPoint;
 
     private Animator animator;
 
@@ -15,7 +22,9 @@ public class PlayerHealt : MonoBehaviour
     private void Awake()
     {
         eventBus = ServiceLoader.GetService<IEventBus>();
-
+    }
+    private void Start()
+    {
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         PlayerSpawnPoint point = FindFirstObjectByType<PlayerSpawnPoint>();
@@ -24,28 +33,49 @@ public class PlayerHealt : MonoBehaviour
         {
             PlayerSpawnPoint = point.transform;
         }
-    }
-    
-    private void Update()
-    {
-        //testyeo muerte player
-        if (Input.GetKeyDown(KeyCode.K))
+        if (spriteRenderer != null) 
         {
-            animator.SetTrigger("Die");
-            TakeDamage(maxHealth);
+            originalColor = spriteRenderer.color;
         }
     }
-
+    
     public void TakeDamage(int damage)
     {
+        if (isInvulnerable) 
+            return;
+
         currentHealth -= damage;
         animator.SetTrigger("Hurt");
+
         if (currentHealth <= 0)
         {
             Die();
         }
+        else
+        {
+            StartCoroutine(InvulnerabilityRoutine());
+        }
     }
+    
+    private IEnumerator InvulnerabilityRoutine()
+    {
+        isInvulnerable = true;
+        float elapsed = 0f;
+        bool isFlashing = false;
+        
+        while (elapsed < iFramesDuration)
+        {
+            spriteRenderer.color = isFlashing ? originalColor : flashColor;
+            isFlashing = !isFlashing;
+            
+            yield return new WaitForSeconds(0.1f);
+            elapsed += 0.1f;
+        }
 
+        spriteRenderer.color = originalColor;
+        isInvulnerable = false;
+    }
+    
     private void Die()
     {
         animator.SetBool("Die", true);

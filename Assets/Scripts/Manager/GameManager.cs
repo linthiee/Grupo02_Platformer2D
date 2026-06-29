@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using static EventBus;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject defeatPanel;
+    [SerializeField] UnityEngine.Audio.AudioMixer audioMixer;
+    
     private IEventBus _eventBus;
     
     private void Start()
@@ -14,6 +18,7 @@ public class GameManager : MonoBehaviour
 
         _eventBus.Subscribe<ExitToMenuEvent>(OnBackToMenu);
         _eventBus.Subscribe<EndGameEvent>(OnGameEnd);
+        _eventBus.Subscribe<PlayerDeathEvent>(OnPlayerDeath);
     }
 
     private void OnDestroy()
@@ -22,14 +27,24 @@ public class GameManager : MonoBehaviour
         {
             _eventBus.Unsubscribe<ExitToMenuEvent>(OnBackToMenu);
             _eventBus.Unsubscribe<EndGameEvent>(OnGameEnd);
+            _eventBus.Unsubscribe<PlayerDeathEvent>(OnPlayerDeath);
         }
         Application.wantsToQuit -= WantsToQuit;
     }
 
+    private void OnPlayerDeath(PlayerDeathEvent eventData)
+    {
+        Time.timeScale = 0f;
+        audioMixer.SetFloat("VolumeVFX", -80f);
+
+        defeatPanel.SetActive(true);
+    } 
+    
     private void OnBackToMenu(ExitToMenuEvent eventData)
     {
         Debug.Log("OnBackToMenu called");
         Time.timeScale = 1f;
+        audioMixer.SetFloat("VolumeVFX", 0f);
         SceneManager.LoadSceneAsync("Scenes/MainMenu");
     }
 

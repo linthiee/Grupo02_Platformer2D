@@ -1340,6 +1340,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 818066024457999212, guid: 8d6349b284940ae458053ca5bd0a23db, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 818066024457999212, guid: 8d6349b284940ae458053ca5bd0a23db, type: 3}
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
@@ -7460,6 +7464,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5486536122036789536, guid: 354bcb52b13118b4ea01ff671ba895e0, type: 3}
   m_PrefabInstance: {fileID: 7514013680073143448}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &457285534 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5917959992737769735, guid: 354bcb52b13118b4ea01ff671ba895e0, type: 3}
+  m_PrefabInstance: {fileID: 7514013680073143448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &642401722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7700,16 +7709,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4125163874089611030, guid: b6c66c8c6c8fc6045ba3837a17bc0ec2, type: 3}
       propertyPath: health
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4125163874089611030, guid: b6c66c8c6c8fc6045ba3837a17bc0ec2, type: 3}
       propertyPath: pointA
       value: 
-      objectReference: {fileID: 897839685}
+      objectReference: {fileID: 0}
     - target: {fileID: 4125163874089611030, guid: b6c66c8c6c8fc6045ba3837a17bc0ec2, type: 3}
       propertyPath: pointB
       value: 
-      objectReference: {fileID: 75322097}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957542425573279609, guid: b6c66c8c6c8fc6045ba3837a17bc0ec2, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5736632176013803203, guid: b6c66c8c6c8fc6045ba3837a17bc0ec2, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -7764,6 +7777,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 822181070873017474, guid: 354bcb52b13118b4ea01ff671ba895e0, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 457285534}
+    - target: {fileID: 822181070873017474, guid: 354bcb52b13118b4ea01ff671ba895e0, type: 3}
       propertyPath: PlayerSpawnPoint
       value: 
       objectReference: {fileID: 110130760}
@@ -7775,6 +7792,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 360680273}
+    - target: {fileID: 3912379078124602678, guid: 354bcb52b13118b4ea01ff671ba895e0, type: 3}
+      propertyPath: orthographic size
+      value: 13.55
+      objectReference: {fileID: 0}
     - target: {fileID: 5486536122036789536, guid: 354bcb52b13118b4ea01ff671ba895e0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.9
