@@ -10,7 +10,14 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="352ea669-9f2d-41d3-8340-31a19301b1e7" name="Changes" comment="" />
+    <list default="true" id="352ea669-9f2d-41d3-8340-31a19301b1e7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grupo02_Platformer2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grupo02_Platformer2D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-00_0.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/Idle/adventurer-idle-00_0.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Mobs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Mobs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lvl1Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lvl1Map.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/GameManager.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,6 +170,8 @@
       <workItem from="1781909949268" duration="3302000" />
       <workItem from="1782592225716" duration="14281000" />
       <workItem from="1782678534507" duration="3543000" />
+      <workItem from="1782743187293" duration="10000" />
+      <workItem from="1782743231661" duration="919000" />
     </task>
     <servers />
   </component>

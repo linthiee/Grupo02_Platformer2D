@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     private void OnPlayerDeath(PlayerDeathEvent eventData)
     {
         Time.timeScale = 0f;
-        audioMixer.SetFloat("VolumeVFX", -80f);
+        audioMixer.SetFloat("VFXVolume", -80f);
 
         defeatPanel.SetActive(true);
     } 
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("OnBackToMenu called");
         Time.timeScale = 1f;
-        audioMixer.SetFloat("VolumeVFX", 0f);
+        audioMixer.SetFloat("VFXVolume", 0f);
         SceneManager.LoadSceneAsync("Scenes/MainMenu");
     }
 
