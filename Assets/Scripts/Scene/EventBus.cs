@@ -84,4 +84,8 @@ public class EventBus : IEventBus
     public struct ExitFromMenuEvent
     {
     }
+    
+    public struct GameWonEvent 
+    { 
+    }
 }

@@ -26,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip swordSwing;
     
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckRadius = 0.2f;
+    [SerializeField] private LayerMask groundLayer;
+    
     private PlayerState currentState = PlayerState.Idle;
     private bool facingRight = true;
     private bool isGrounded = false;
@@ -67,13 +71,19 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         wasGrounded = isGrounded;
-        isGrounded = false;
+        
+        CheckGrounded(); 
 
         ApplyMovement();
         ApplyJump();
         ApplyJumpPhysics();
     }
 
+    private void CheckGrounded()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+    
     private void GatherInputs()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
@@ -126,7 +136,13 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateState()
     {
         if (currentState == PlayerState.Attacking)
+        {
+            if (!isGrounded && rb.linearVelocity.y < -0.1f)
+            {
+                OnAttackComplete(); 
+            }
             return;
+        }
 
         if (isGrounded)
         {
@@ -202,29 +218,6 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jumpRequest = false;
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            for (int i = 0; i < collision.contactCount; i++)
-            {
-                Vector2 normal = collision.GetContact(i).normal;
-
-                if (normal.y > 0.5f)
-                {
-                    isGrounded = true;
-
-                    if (!wasGrounded)
-                    {
-                        wasGrounded = true;
-                    }
-
-                    return;
-                }
-            }
         }
     }
 }

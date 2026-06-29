@@ -8,6 +8,7 @@ public class UIGameplay : MonoBehaviour
     [SerializeField] private GameObject panelPause;
     [SerializeField] private GameObject panelSettings;
     [SerializeField] private GameObject panelDefeat;
+    [SerializeField] private GameObject panelVictory;
 
     [SerializeField] private Button buttonSettings;
     [SerializeField] private Button buttonExit;
@@ -17,6 +18,9 @@ public class UIGameplay : MonoBehaviour
     [SerializeField] private Button buttonDefeatExit;
     [SerializeField] private Button buttonRetry;
     [SerializeField] private Button buttonRetryPause;
+    
+    [SerializeField] private Button buttonRetryWin;
+    [SerializeField] private Button buttonExitWin;
 
     private IEventBus _eventBus;
 
@@ -33,10 +37,14 @@ public class UIGameplay : MonoBehaviour
         buttonDefeatExit.onClick.AddListener(OnExitClicked);
         buttonRetry.onClick.AddListener(OnRetryClicked);
         buttonRetryPause.onClick.AddListener(OnRetryClicked);
+        
+        buttonRetryWin.onClick.AddListener(OnRetryClicked);
+        buttonExitWin.onClick.AddListener(OnExitClicked);
 
         panelPause.SetActive(false);
         panelSettings.SetActive(false);
         panelDefeat.SetActive(false);
+        panelVictory.SetActive(false);
     }
 
     private void Update()
@@ -54,11 +62,13 @@ public class UIGameplay : MonoBehaviour
         buttonDefeatExit.onClick.RemoveAllListeners();
         buttonRetry.onClick.RemoveAllListeners();
         buttonRetryPause.onClick.RemoveAllListeners();
+        buttonRetryWin.onClick.RemoveAllListeners();
+        buttonExitWin.onClick.RemoveAllListeners();
     }
 
     private void TogglePause()
     {
-        if (panelDefeat.gameObject.activeInHierarchy)
+        if (panelDefeat.gameObject.activeInHierarchy || panelVictory.gameObject.activeInHierarchy)
             return;
         
         isPaused = !isPaused;
@@ -86,7 +96,7 @@ public class UIGameplay : MonoBehaviour
 
     private void OnExitClicked()
     {
-        if (isPaused || panelDefeat.gameObject.activeInHierarchy)
+        if (isPaused || panelDefeat.gameObject.activeInHierarchy || panelVictory.gameObject.activeInHierarchy)
         {
             Time.timeScale = 1.0f;
 

@@ -23,6 +23,10 @@ public abstract class Enemy : MonoBehaviour
     protected bool isDead = false;
     private Color originalColor = Color.white;
 
+    public bool isBoss = false;
+    
+    private IEventBus _eventBus;
+    
     protected virtual void Start()
     {
         normalSpeed = speed;
@@ -101,6 +105,11 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Die()
     {
+        if (isBoss)
+        {
+            ServiceLoader.GetService<IEventBus>().Publish(new EventBus.GameWonEvent());
+        }
+        
         Destroy(gameObject);
     }
 

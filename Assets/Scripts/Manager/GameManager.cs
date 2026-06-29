@@ -6,6 +6,7 @@ using static EventBus;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject defeatPanel;
+    [SerializeField] GameObject victoryPanel;
     [SerializeField] UnityEngine.Audio.AudioMixer audioMixer;
     
     private IEventBus _eventBus;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
         _eventBus.Subscribe<ExitToMenuEvent>(OnBackToMenu);
         _eventBus.Subscribe<EndGameEvent>(OnGameEnd);
         _eventBus.Subscribe<PlayerDeathEvent>(OnPlayerDeath);
+        _eventBus.Subscribe<GameWonEvent>(OnGameWon);
     }
 
     private void OnDestroy()
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
             _eventBus.Unsubscribe<ExitToMenuEvent>(OnBackToMenu);
             _eventBus.Unsubscribe<EndGameEvent>(OnGameEnd);
             _eventBus.Unsubscribe<PlayerDeathEvent>(OnPlayerDeath);
+            _eventBus.Unsubscribe<GameWonEvent>(OnGameWon);
         }
         Application.wantsToQuit -= WantsToQuit;
     }
@@ -39,6 +42,12 @@ public class GameManager : MonoBehaviour
 
         defeatPanel.SetActive(true);
     } 
+    
+    private void OnGameWon(GameWonEvent eventData)
+    {
+        Time.timeScale = 0f;
+        victoryPanel.SetActive(true);
+    }
     
     private void OnBackToMenu(ExitToMenuEvent eventData)
     {

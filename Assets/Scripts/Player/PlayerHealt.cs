@@ -76,7 +76,7 @@ public class PlayerHealt : MonoBehaviour
         isInvulnerable = false;
     }
     
-    private void Die()
+    public void Die()
     {
         animator.SetBool("Die", true);
        GetComponent<PlayerMovement>().enabled = false;
