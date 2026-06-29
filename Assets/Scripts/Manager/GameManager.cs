@@ -1,30 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 using static EventBus;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Instance singleton")]
-    public static GameManager Instance { get; private set; }
-
-    [Header("Player ingame info")]
-    [SerializeField] private TextMeshProUGUI scoreText;
-
-    [SerializeField] private GameObject defeatPannel;
-
     private IEventBus _eventBus;
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        Instance = this;
-    }
-
+    
     private void Start()
     {
         Application.wantsToQuit += WantsToQuit;
@@ -49,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("OnBackToMenu called");
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync("Menu");
+        SceneManager.LoadSceneAsync("Scenes/MainMenu");
     }
 
     public void OnGameEnd(EndGameEvent eventData)
@@ -59,7 +40,7 @@ public class GameManager : MonoBehaviour
 #if UNITY_EDITOR
         Time.timeScale = 1f;
         Debug.Log("quitting...");
-        SceneManager.LoadSceneAsync("Menu");
+        SceneManager.LoadSceneAsync("Scenes/MainMenu");
 #elif UNITY_WEBGL
         Time.timeScale = 1f;
         SceneManager.LoadSceneAsync("Menu");

@@ -69,7 +69,7 @@ public class EventBus : IEventBus
         }
     }
 
-    public struct EasyLevelEvent
+    public struct PlayGameEvent
     {
     }
 

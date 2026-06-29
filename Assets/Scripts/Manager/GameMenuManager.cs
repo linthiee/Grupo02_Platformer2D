@@ -10,7 +10,7 @@ public class GameMenuManager : MonoBehaviour
     {
         _eventBus = ServiceLoader.GetService<IEventBus>();
 
-        _eventBus.Subscribe<EasyLevelEvent>(OnEasyLevelSelected);
+        _eventBus.Subscribe<PlayGameEvent>(OnPlayClicked);
 
         _eventBus.Subscribe<ExitToMenuEvent>(OnBackToMenu);
     }
@@ -19,14 +19,14 @@ public class GameMenuManager : MonoBehaviour
     {
         if (_eventBus != null)
         {
-            _eventBus.Unsubscribe<EasyLevelEvent>(OnEasyLevelSelected);
+            _eventBus.Unsubscribe<PlayGameEvent>(OnPlayClicked);
             _eventBus.Unsubscribe<ExitToMenuEvent>(OnBackToMenu);
         }
     }
 
-    private void OnEasyLevelSelected(EasyLevelEvent eventData)
+    private void OnPlayClicked(PlayGameEvent eventData)
     {
-        SceneManager.LoadScene("LevelEasy");
+        SceneManager.LoadScene("Lvl1Map");
     }
 
     private void OnBackToMenu(ExitToMenuEvent eventData)

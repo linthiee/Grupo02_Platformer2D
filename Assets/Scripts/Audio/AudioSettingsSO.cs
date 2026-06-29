@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AudioSettings", menuName = "TowerBuilder/AudioSettings")]
+[CreateAssetMenu(fileName = "AudioSettings", menuName = "Grupo02_Platformer2D/AudioSettings")]
 
 public class AudioSettingsSO : ScriptableObject
 {
