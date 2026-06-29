@@ -44,7 +44,7 @@ Tilemap:
   m_GameObject: {fileID: 5065973593659488092}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -12, y: 4, z: 0}
+  - first: {x: -7, y: 10, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 127
@@ -54,7 +54,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -11, y: 4, z: 0}
+  - first: {x: -6, y: 10, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 126
@@ -64,7 +64,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -10, y: 4, z: 0}
+  - first: {x: -5, y: 10, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 126
@@ -74,7 +74,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -9, y: 4, z: 0}
+  - first: {x: -4, y: 10, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 125
@@ -84,7 +84,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -12, y: 5, z: 0}
+  - first: {x: -7, y: 11, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 124
@@ -94,7 +94,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -11, y: 5, z: 0}
+  - first: {x: -6, y: 11, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 123
@@ -104,7 +104,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -10, y: 5, z: 0}
+  - first: {x: -5, y: 11, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 123
@@ -114,7 +114,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -9, y: 5, z: 0}
+  - first: {x: -4, y: 11, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 122
@@ -824,7 +824,7 @@ Transform:
   m_GameObject: {fileID: 6325769539180666114}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.08287, y: 0.06821, z: 0}
+  m_LocalPosition: {x: -3.05, y: 0.06821, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
