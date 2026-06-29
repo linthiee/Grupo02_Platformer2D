@@ -45,6 +45,10 @@ public class EventBus : IEventBus
 
     public struct PlayerAttackEvent
     {
+    }   
+    
+    public struct TakeDmgEvent
+    {
     }
 
     public struct PlayerDeathEvent

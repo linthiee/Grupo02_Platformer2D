@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static EventBus;
+
 public class UIGameplay : MonoBehaviour
 {
     [SerializeField] private GameObject panelPause;
@@ -18,13 +19,16 @@ public class UIGameplay : MonoBehaviour
     [SerializeField] private Button buttonDefeatExit;
     [SerializeField] private Button buttonRetry;
     [SerializeField] private Button buttonRetryPause;
-    
+
     [SerializeField] private Button buttonRetryWin;
     [SerializeField] private Button buttonExitWin;
+
+    [SerializeField] private GameObject[] healthBar;
 
     private IEventBus _eventBus;
 
     private bool isPaused = false;
+
     private void Awake()
     {
         _eventBus = ServiceLoader.GetService<IEventBus>();
@@ -37,9 +41,11 @@ public class UIGameplay : MonoBehaviour
         buttonDefeatExit.onClick.AddListener(OnExitClicked);
         buttonRetry.onClick.AddListener(OnRetryClicked);
         buttonRetryPause.onClick.AddListener(OnRetryClicked);
-        
+
         buttonRetryWin.onClick.AddListener(OnRetryClicked);
         buttonExitWin.onClick.AddListener(OnExitClicked);
+
+        _eventBus.Subscribe<TakeDmgEvent>(OnTakeDmg);
 
         panelPause.SetActive(false);
         panelSettings.SetActive(false);
@@ -54,6 +60,7 @@ public class UIGameplay : MonoBehaviour
             TogglePause();
         }
     }
+
     private void OnDestroy()
     {
         buttonSettings.onClick.RemoveAllListeners();
@@ -64,9 +71,28 @@ public class UIGameplay : MonoBehaviour
         buttonRetryPause.onClick.RemoveAllListeners();
         buttonRetryWin.onClick.RemoveAllListeners();
         buttonExitWin.onClick.RemoveAllListeners();
+        _eventBus.Unsubscribe<TakeDmgEvent>(OnTakeDmg);
     }
 
-    private void TogglePause()
+    private void OnTakeDmg(TakeDmgEvent eventData)
+    {
+        bool hasFound = false;
+            
+        for (int i = healthBar.Length - 1; i >= 0; i--) 
+        {
+            if (healthBar[i].activeSelf)
+            {
+                healthBar[i].SetActive(false);
+                hasFound = true;
+            }
+            
+            if (hasFound)
+                break;
+        }
+    }
+    
+
+private void TogglePause()
     {
         if (panelDefeat.gameObject.activeInHierarchy || panelVictory.gameObject.activeInHierarchy)
             return;

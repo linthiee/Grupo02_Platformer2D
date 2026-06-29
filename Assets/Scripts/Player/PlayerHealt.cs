@@ -55,6 +55,9 @@ public class PlayerHealt : MonoBehaviour
         {
             StartCoroutine(InvulnerabilityRoutine());
         }
+        
+        eventBus.Publish(new EventBus.TakeDmgEvent());
+        
     }
     
     private IEnumerator InvulnerabilityRoutine()

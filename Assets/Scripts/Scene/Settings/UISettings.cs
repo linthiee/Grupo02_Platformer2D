@@ -11,7 +11,6 @@ public class UISettings : MonoBehaviour
 
     [SerializeField] private AudioSettingsSO settingsSO;
     [SerializeField] private AudioMixer mixer;
-
     private void Awake()
     {
         settingsSO.LoadSettings();
