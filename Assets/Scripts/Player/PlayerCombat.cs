@@ -7,33 +7,11 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private int attackDamage = 1;
 
-    private Animator animator;
-
-    private void Awake()
+    public void DealDamage() 
     {
-        animator = GetComponent<Animator>();
-    }
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, attackSize, 0f, enemyLayers);
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Attack();
-        }
-    }
-
-    private void Attack()
-    {
-        // Play attack animation
-        animator.SetTrigger("Attack");
-    }
-
-    public void DealDamge()
-    {
-        Collider2D[] hitEnemie = Physics2D.OverlapBoxAll(attackPoint.position, attackSize, 0f, enemyLayers);
-
-        // Damage them
-        foreach (Collider2D hit in hitEnemie)
+        foreach (Collider2D hit in hitEnemies)
         {
             Enemy enemy = hit.GetComponent<Enemy>();
 
@@ -42,7 +20,6 @@ public class PlayerCombat : MonoBehaviour
                 enemy.TakeDamage(attackDamage);
             }
         }
-
     }
    
     private void OnDrawGizmosSelected()

@@ -49,9 +49,7 @@ public class PlayerHealt : MonoBehaviour
     private void Die()
     {
         animator.SetBool("Die", true);
-        // Disable player movement and other components here
        GetComponent<PlayerMovement>().enabled = false;
-        // You can also disable other components like colliders, etc.
 
         eventBus.Publish(new EventBus.PlayerDeathEvent());
 
@@ -62,12 +60,11 @@ public class PlayerHealt : MonoBehaviour
 
     private IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(2f); // Wait for 2 seconds before respawning
+        yield return new WaitForSeconds(2f);
         currentHealth = maxHealth;
         transform.position = PlayerSpawnPoint.position;
         animator.SetBool("Die", false);
         GetComponent<PlayerMovement>().enabled = true;
         animator.Play("PlayerIdle");
-        // Reset player position or other necessary states here
     }   
 }

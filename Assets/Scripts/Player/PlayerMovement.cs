@@ -12,19 +12,24 @@ public enum PlayerState
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform attackPoint;
-    
+
     [SerializeField] private float maxSpeed;
     [SerializeField] private float acceleration;
     [SerializeField] private float deceleration;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float fallMultiplier = 2.5f;
+    [SerializeField] private float lowJumpMultiplier = 2f;
 
     [SerializeField] private float coyoteTime;
     [SerializeField] private float jumpBufferTime;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip swordSwing;
+    
     private PlayerState currentState = PlayerState.Idle;
     private bool facingRight = true;
     private bool isGrounded = false;
-    private bool wasGrounded = false; 
+    private bool wasGrounded = false;
 
     private float coyoteTimeCounter;
     private float jumpBufferCounter;
@@ -39,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         PlayerSpawnPoint playerSpawnpoint = FindFirstObjectByType<PlayerSpawnPoint>();
-      
+
         if (playerSpawnpoint != null)
         {
             transform.position = playerSpawnpoint.transform.position;
@@ -62,24 +67,38 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         wasGrounded = isGrounded;
-        isGrounded = false; 
+        isGrounded = false;
 
         ApplyMovement();
         ApplyJump();
+        ApplyJumpPhysics();
     }
 
     private void GatherInputs()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpBufferCounter = jumpBufferTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && currentState != PlayerState.Attacking)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && currentState != PlayerState.Attacking)
         {
-            Attack();
+            Debug.Log($"{this.currentState}");
+            HandleAttackInput();
+        }
+    }
+
+    private void ApplyJumpPhysics()
+    {
+        if (rb.linearVelocity.y < 0)
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else if (rb.linearVelocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 
@@ -106,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateState()
     {
-        if (currentState == PlayerState.Attacking) 
+        if (currentState == PlayerState.Attacking)
             return;
 
         if (isGrounded)
@@ -146,20 +165,24 @@ public class PlayerMovement : MonoBehaviour
     {
         facingRight = right;
         spriteRenderer.flipX = !right;
-        
+
         float attackPointX = right ? 0.8f : -0.8f;
         attackPoint.localPosition = new Vector3(attackPointX, 0.0f, 0.0f);
     }
 
-    private void Attack()
+    private void HandleAttackInput()
     {
         currentState = PlayerState.Attacking;
         animator.SetTrigger("Attack");
+        GetComponent<AudioSource>().PlayOneShot(swordSwing);
+
+        Debug.Log($"{this.currentState}");
     }
 
-    public void OnAttackComplete() 
+    public void OnAttackComplete()
     {
         currentState = PlayerState.Idle;
+        Debug.Log($"{this.currentState}");
     }
 
     private void ApplyMovement()
@@ -167,7 +190,7 @@ public class PlayerMovement : MonoBehaviour
         float targetSpeed = moveInput * maxSpeed;
         float speedDif = targetSpeed - rb.linearVelocity.x;
         float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deceleration;
-        
+
         float movementForce = speedDif * accelRate;
         rb.AddForce(movementForce * Vector2.right, ForceMode2D.Force);
     }
@@ -189,14 +212,14 @@ public class PlayerMovement : MonoBehaviour
             for (int i = 0; i < collision.contactCount; i++)
             {
                 Vector2 normal = collision.GetContact(i).normal;
-                
+
                 if (normal.y > 0.5f)
                 {
                     isGrounded = true;
-                    
+
                     if (!wasGrounded)
                     {
-                        wasGrounded = true; 
+                        wasGrounded = true;
                     }
 
                     return;
