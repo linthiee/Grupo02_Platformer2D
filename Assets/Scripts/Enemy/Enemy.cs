@@ -82,7 +82,7 @@ public abstract class Enemy : MonoBehaviour
 
         health -= amount;
         
-        animator.SetTrigger("hit"); 
+        animator.SetTrigger("Hit"); 
         
         StartCoroutine(DamageFlash());
 
